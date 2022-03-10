@@ -12,5 +12,5 @@ class TaskListView(ListView):
 
 class TaskCreateView(CreateView):
     model = Task
-    fields = []
-    success_url = reverse_lazy('todo:list_task')
+    fields = ["title","due_date","description"]
+    success_url = reverse_lazy('todo:task_list')
