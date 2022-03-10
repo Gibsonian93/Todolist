@@ -5,7 +5,9 @@
     <div class="container">
         <ul>
             {% for task in task_list %}
-                <li>{{task}}</li>
+                <li>
+                    <a href = "/todo/task_detail/{{task.id}}">{{task}}
+                </li>
             {% endfor %}
         </ul>
     </div>
