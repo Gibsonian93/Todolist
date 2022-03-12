@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{task}}</h1>
+<div class = "container">
+    <h1 class = "display-1">{{task.title}}</h1>
+    <strong>Status: {{ task.complete|yesno:"Done,Todo" }}</strong>
+    <p>Due Date: {{task.due_date}}</p>
+    <p>Date Created: {{task.date_stamp}}</p>
+    <p>Description: {{task.description}}</p>
+    
+    <form action="{% url 'todo:task_update' task.id  %}">
+        {% csrf_token%}
+
+        <button class="btn btn-success">Complete</button>
+    </form>
+
+</div>
 {% endblock %}

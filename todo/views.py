@@ -18,4 +18,8 @@ class TaskCreateView(CreateView):
 class TaskDetailView(DetailView):
     model = Task
 
+class TaskUpdateView(UpdateView):
+    model = Task
+    fields = ["complete"]
+    success_url = reverse_lazy('todo:task_list')
 
